@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Разделы курса | color/</title>
+    <!-- Подключаем шрифт Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- ГЛОБАЛЬНЫЕ СТИЛИ --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            background-color: #000;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            overflow: hidden; 
+        }
+
+        /* --- АНИМИРОВАННЫЙ ФОН --- */
+        .color-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #ff00c1, #ff5e00, #ffee00, #00ff87, #00d2ff, #3e00ff, #9b00e8);
+            background-size: 500% 500%;
+            animation: colorWave 25s ease-in-out infinite;
+        }
+
+        @keyframes colorWave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Основной контейнер */
+        .page-container {
+            width: 100%;
+            padding: 30px 15px 100px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto; 
+            height: 100%;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #f0f0f0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        /* --- ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ КНОПОК --- */
+        .module-list {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .module-button {
+            display: block;
+            padding: 18px 20px;
+            /* ИЗМЕНЕНИЕ: Белый фон заменен на темный для контраста */
+            background-color: rgba(0, 0, 0, 0.2); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #f0f0f0; /* Сделал текст чуть ярче */
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 12px; /* Немного увеличил радиус для мягкости */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease, transform 0.15s ease;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px; /* Немного увеличил разрядку */
+            user-select: none;
+            /* ИЗМЕНЕНИЕ: Тень для лучшей читаемости текста */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); 
+        }
+
+        .module-button:active {
+            background-color: rgba(0, 0, 0, 0.3);
+            transform: scale(0.98);
+        }
+        
+        /* --- НИЖНЕЕ НАВИГАЦИОННОЕ МЕНЮ --- */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #b0b0b0;
+            font-family: -apple-system, sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            flex-grow: 1;
+            height: 100%;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        
+        .nav-item:active {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-item svg {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="color-background"></div>
+    
+    <div class="page-container">
+        <h1>Разделы курса</h1>
+        <div class="module-list">
+            <a href="module-intro.html" class="module-button">Введение в цвет</a>
+            <a href="module-psychology.html" class="module-button">Психология цвета в брендинге</a>
+            <a href="module-harmony.html" class="module-button">Цветовые гармонии и схемы</a>
+            <a href="module-palette.html" class="module-button">Создание фирменной палитры</a>
+            <a href="module-ui.html" class="module-button">Цвет в типографике и UI/UX</a>
+            <a href="module-trends.html" class="module-button">Анализ цветовых трендов</a>
+            <a href="module-tools.html" class="module-button">Инструменты колориста</a>
+            <a href="module-cases.html" class="module-button">Кейсы: разбор мировых брендов</a>
+            <a href="module-practice.html" class="module-button">Практическое задание</a>
+            <a href="community.html" class="module-button">Доступ в сообщество</a>
+        </div>
+    </div>
+
+    <!-- Нижнее меню -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            <span>Главная</span>
+        </a>
+        <a href="community.html" class="nav-item">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            <span>Сообщество</span>
+        </a>
+        <a href="javascript:history.back()" class="nav-item">
+            <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            <span>Назад</span>
+        </a>
+    </nav>
+
+</body>
+</html>
